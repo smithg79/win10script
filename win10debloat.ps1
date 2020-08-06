@@ -14,7 +14,7 @@
 #
 #     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JJ8R4')"
 #
-#	Chris Titus Additions:
+#	Greg Smith Additions:
 #
 #	- Dark Mode
 #	- One Command to launch and run
@@ -30,11 +30,13 @@ $tweaks = @(
 	"RequireAdmin",
 
 	### External Program Setup
-	"InstallTitusProgs", #REQUIRED FOR OTHER PROGRAM INSTALLS!
+	"InstallSmithProgs", #REQUIRED FOR OTHER PROGRAM INSTALLS!
 	"InstallAdobe",
 	"Install7Zip",
 	"InstallNotepadplusplus",
 	"InstallMediaPlayerClassic",
+	"InStallOpenShell",
+	
 
 	### Windows Apps
 	"DebloatAll",
@@ -69,7 +71,7 @@ $tweaks = @(
 	"SetUnknownNetworksPrivate",  # "SetUnknownNetworksPublic",
 	"DisableNetDevicesAutoInst",  # "EnableNetDevicesAutoInst",
 	"DisableCtrldFolderAccess",	# "EnableCtrldFolderAccess",
-	# "DisableFirewall",            # "EnableFirewall",
+	"DisableFirewall",            # "EnableFirewall",
 	"DisableDefender",            # "EnableDefender",
 	"DisableDefenderCloud",       # "EnableDefenderCloud",
 	"EnableF8BootMenu",             # "DisableF8BootMenu",
@@ -93,7 +95,7 @@ $tweaks = @(
 	"DisableDefragmentation",     # "EnableDefragmentation",
 	"DisableSuperfetch",          # "EnableSuperfetch",
 	"DisableIndexing",            # "EnableIndexing",
-	"SetBIOSTimeUTC",             # "SetBIOSTimeLocal",
+	"SetBIOSTimeLocal",             # "SetBIOSTimeUTC",
 	"DisableHibernation",		# "EnableHibernation",          # 
 	"EnableSleepButton",		# "DisableSleepButton",         
 	"DisableSleepTimeout",        # "EnableSleepTimeout",
@@ -115,7 +117,7 @@ $tweaks = @(
 	# "ShowSmallTaskbarIcons",        # "ShowLargeTaskbarIcons",
 	# "SetTaskbarCombineWhenFull",    # "SetTaskbarCombineNever",     # "SetTaskbarCombineAlways",
 	# "HideTaskbarPeopleIcon",        # "ShowTaskbarPeopleIcon",
-	"ShowTrayIcons",                # "HideTrayIcons",
+	"HideTrayIcons",                # "ShowTrayIcons",
 	"DisableSearchAppInStore",      # "EnableSearchAppInStore",
 	"DisableNewAppPrompt",          # "EnableNewAppPrompt",
 	# "SetControlPanelSmallIcons",  # "SetControlPanelLargeIcons",  # "SetControlPanelCategories",
@@ -187,10 +189,10 @@ $tweaks = @(
 )
 
 #########
-# Recommended Titus Programs
+# Recommended Smith Programs
 #########
 
-Function InstallTitusProgs {
+Function InstallSmithProgs {
 	Write-Output "Installing Chocolatey"
 	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 	choco install chocolatey-core.extension -y
@@ -225,6 +227,10 @@ Function InstallMediaPlayerClassic {
 	Write-Output "Installing Media Player Classic (VLC Alternative)"
 	choco install mpc-hc -y
 }
+
+Function InstallOpenShellSetup {
+         Write-Output "Installing Open Shell
+	 choco install openshellsetup -y
 
 ##########
 # Privacy Tweaks
@@ -2464,7 +2470,7 @@ Function Restart {
 }
 
 ###########
-# Titus Additions
+# Smith Additions
 ###########
 
 Function EnableDarkMode {
@@ -2565,7 +2571,7 @@ Function DebloatAll {
         #Optional: Typically not removed but you can if you need to for some reason
         #"*Microsoft.Advertising.Xaml_10.1712.5.0_x64__8wekyb3d8bbwe*"
         #"*Microsoft.Advertising.Xaml_10.1712.5.0_x86__8wekyb3d8bbwe*"
-        #"*Microsoft.BingWeather*"
+        "*Microsoft.BingWeather*"
         #"*Microsoft.MSPaint*"
         #"*Microsoft.MicrosoftStickyNotes*"
         #"*Microsoft.Windows.Photos*"
