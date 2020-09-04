@@ -124,7 +124,7 @@ $tweaks = @(
 	# "SetVisualFXPerformance",     # "SetVisualFXAppearance",
 	# "AddENKeyboard",              # "RemoveENKeyboard",
 	"EnableNumlock",             	# "DisableNumlock",
-	"EnableDarkMode",				# "DisableDarkMode",
+	# "EnableDarkMode",				# "DisableDarkMode",
 	"Stop-EdgePDF",
 
 	### Explorer UI Tweaks ###
@@ -159,11 +159,11 @@ $tweaks = @(
 	"UninstallThirdPartyBloat",     # "InstallThirdPartyBloat",
 	# "UninstallWindowsStore",      # "InstallWindowsStore",
 	# "DisableXboxFeatures",          # "EnableXboxFeatures",
-	"DisableAdobeFlash",            # "EnableAdobeFlash",
+	# "DisableAdobeFlash",            # "EnableAdobeFlash",
 	"InstallMediaPlayer", 		# "UninstallMediaPlayer",
-	"UninstallInternetExplorer",  # "InstallInternetExplorer",
+	# "UninstallInternetExplorer",  # "InstallInternetExplorer",
 	"UninstallWorkFolders",       # "InstallWorkFolders",
-	"InstallLinuxSubsystem",      # "UninstallLinuxSubsystem",
+	# "InstallLinuxSubsystem",      # "UninstallLinuxSubsystem",
 	# "InstallHyperV",              # "UninstallHyperV",
 	"SetPhotoViewerAssociation",    # "UnsetPhotoViewerAssociation",
 	"AddPhotoViewerOpenWith",       # "RemovePhotoViewerOpenWith",
@@ -203,34 +203,7 @@ Function InstallSmithProgs {
 	./OOSU10.exe ooshutup10.cfg /quiet
 }
 
-Function InstallAdobe {
-	Write-Output "Installing Adobe Acrobat Reader"
-	choco install adobereader -y
-}
 
-Function InstallJava {
-	Write-Output "Installing Java"
-	choco install jre8 -y
-}
-
-Function Install7Zip {
-	Write-Output "Installing 7-Zip"
-	choco install 7zip -y
-}
-
-Function InstallNotepadplusplus {
-	Write-Output "Installing Notepad++"
-	choco install notepadplusplus -y
-}
-
-Function InstallMediaPlayerClassic {
-	Write-Output "Installing Media Player Classic (VLC Alternative)"
-	choco install mpc-hc -y
-}
-
-Function InstallOpenShellSetup {
-         Write-Output "Installing Open Shell
-	 choco install openshellsetup -y
 
 ##########
 # Privacy Tweaks
