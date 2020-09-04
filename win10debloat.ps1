@@ -32,9 +32,9 @@ $tweaks = @(
 	### External Program Setup
 	"InstallSmithProgs", #REQUIRED FOR OTHER PROGRAM INSTALLS!
 	"InstallAdobe",
-	"Install7Zip",
-	"InstallNotepadplusplus",
-	"InstallMediaPlayerClassic",
+	# "Install7Zip",
+	# "InstallNotepadplusplus",
+	# "InstallMediaPlayerClassic",
 	"InStallOpenShell",
 	
 
